@@ -1,0 +1,62 @@
+source: "Hello World"
+tokens:
+  - text: "Hello"
+    type: IDENTIFIER
+  - text: " "
+    type: WHITESPACE
+  - text: "World"
+    type: IDENTIFIER
+---
+source: |
+  Hello
+  World
+tokens:
+  - text: "Hello"
+    type: IDENTIFIER
+  - text: "\n"
+    type: LINEBREAK
+  - text: "World"
+    type: IDENTIFIER
+  - text: "\n"
+    type: LINEBREAK
+---
+source: |
+  Hello;
+  // World
+tokens:
+  - text: "Hello"
+    type: IDENTIFIER
+  - text: ";"
+    type: OPERATOR
+  - text: "\n"
+    type: LINEBREAK
+  - text: // World
+    type: COMMENT
+    flag: INLINE
+  - text: "\n"
+    type: LINEBREAK
+---
+source: |
+  Hello;
+  $"World{ }"
+  /* " /* Comment */
+tokens:
+  - text: "Hello"
+    type: IDENTIFIER
+  - text: ";"
+    type: OPERATOR
+  - text: "\n"
+    type: LINEBREAK
+  - text: $\"World{
+    type: STRING
+    flag: [INLINE, START]
+  - text: " "
+    type: WHITESAPCE
+  - text: }\"
+    type: STRING
+    flag: [INLINE, END]
+  - text: "/* \" /* Comment */"
+    type: COMMENT
+    flag: BLOCK
+  - text: "\n"
+    type: LINEBREAK

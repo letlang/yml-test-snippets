@@ -1,0 +1,67 @@
+source: |
+  fun Main(let Env :Environment) :Unit = {
+    Env.IO.WriteLine("Hello World")
+  }
+tokens:
+  - text: "fun"
+    type: IDENTIFIER      
+  - text: " "
+    type: WHITESPACE
+  - text: "Main"
+    type: IDENTIFIER     
+  - text: "("
+    type: PUNCTUATION      
+  - text: "let"
+    type: IDENTIFIER      
+  - text: " "
+    type: WHITESPACE
+  - text: "Env"
+    type: IDENTIFIER      
+  - text: " "
+    type: WHITESPACE
+  - text: ":"
+    type: OPERATOR      
+  - text: "Environment"
+    type: IDENTIFIER     
+  - text: ")"
+    type: PUNCTUATION      
+  - text: " "
+    type: WHITESPACE
+  - text: ":"
+    type: OPERATOR      
+  - text: "Unit"
+    type: IDENTIFIER      
+  - text: " "
+    type: WHITESPACE
+  - text: "="
+    type: OPERATOR      
+  - text: " "
+    type: WHITESPACE
+  - text: "{"
+    type: PUNCTUATION       
+  - text: "\n"
+    type: LINEBREAK
+  - text: "  "
+    type: WHITESPACE
+    flag: INDENT
+  - text: "Env"
+    type: IDENTIFIER        
+  - text: "."
+    type: OPERATOR      
+  - text: "IO"
+    type: IDENTIFIER        
+  - text: "."
+    type: OPERATOR      
+  - text: "WriteLine"
+    type: IDENTIFIER     
+  - text: "("
+    type: PUNCTUATION     
+  - text: "\"Hello World\""
+    type: STRING
+    flag: INLINE
+  - text: ")"
+    type: PUNCTUATION       
+  - text: "\n"
+    type: LINEBREAK
+  - text: "}"
+    type: PUNCTUATION
